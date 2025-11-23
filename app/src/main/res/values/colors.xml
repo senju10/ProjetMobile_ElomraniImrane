@@ -7,4 +7,31 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Primary brand colors -->
+    <color name="primary">#1E88E5</color>
+    <color name="onPrimary">#FFFFFF</color>
+
+    <color name="primaryContainer">#90CAF9</color>
+    <color name="onPrimaryContainer">#0D47A1</color>
+
+    <!-- Secondary -->
+    <color name="secondary">#64B5F6</color>
+    <color name="onSecondary">#FFFFFF</color>
+
+    <!-- Background & Surface -->
+    <color name="background">#F5F5F5</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="onSurface">#212121</color>
+
+    <!-- Text -->
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#757575</color>
+
+    <!-- Error -->
+    <color name="error">#D32F2F</color>
+    <color name="onError">#FFFFFF</color>
+
+    <!-- Success (optional) -->
+    <color name="success">#4CAF50</color>
 </resources>

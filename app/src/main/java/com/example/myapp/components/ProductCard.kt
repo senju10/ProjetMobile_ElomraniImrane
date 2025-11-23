@@ -17,7 +17,7 @@ data class Product(
 
 @Composable
 fun ProductCard(
-    product: Product,
+    product: com.example.myapp.components.Product,
     modifier: Modifier = Modifier,
     onClick: () -> Unit
 ) {

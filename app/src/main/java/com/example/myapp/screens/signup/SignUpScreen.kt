@@ -9,75 +9,77 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.myapp.R
+import com.example.myapp.components.AppButton
 import com.example.myapp.navigation.Screen
+import com.example.myapp.components.InputField
+import com.example.myapp.components.SectionTitle
 
 @Composable
 fun SignUpScreen(navController: NavController) {
 
-    var name by remember { mutableStateOf("") }
-    var email by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
+    val name = remember { mutableStateOf("") }
+    val email = remember { mutableStateOf("") }
+    val password = remember { mutableStateOf("") }
 
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(20.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+        verticalArrangement = Arrangement.Center
     ) {
 
-        Text(stringResource(id = R.string.signup_title), modifier = Modifier.padding(bottom = 20.dp))
+        SectionTitle(
+            text = stringResource(R.string.signup_title),
+            modifier = Modifier.padding(bottom = 24.dp)
+        )
 
-        // Name
-        OutlinedTextField(
+        InputField(
             value = name,
-            onValueChange = { name = it },
-            label = { stringResource(id = R.string.name) },
-            modifier = Modifier.fillMaxWidth()
+            label = stringResource(R.string.name),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 16.dp)
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
-
-        // Email
-        OutlinedTextField(
+        InputField(
             value = email,
-            onValueChange = { email = it },
-            label = { Text("Email") },
-            modifier = Modifier.fillMaxWidth()
+            label = stringResource(R.string.email),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 16.dp)
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
-
-        // Password
-        OutlinedTextField(
+        InputField(
             value = password,
-            onValueChange = { password = it },
-            label = { Text("Password") },
-            modifier = Modifier.fillMaxWidth()
+            label = stringResource(R.string.password),
+            isPassword = true,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 24.dp)
         )
 
-        Spacer(modifier = Modifier.height(25.dp))
-
-        // Button
-        Button(
-            onClick = { navController.navigate(Screen.Shop.route) },
+        AppButton(
+            text = stringResource(R.string.signup_button),
             modifier = Modifier
                 .fillMaxWidth()
                 .height(55.dp)
         ) {
-            Text(stringResource(id = R.string.signup_button))
+            navController.navigate(Screen.Login.route)
         }
+        Text(text = stringResource(R.string.already_account))
+        Spacer(modifier = Modifier.width(6.dp))
 
-        Spacer(modifier = Modifier.height(12.dp))
-
-        // Retour vers Login
         Text(
-            stringResource(id = R.string.already_account),
+            text = stringResource(R.string.login_button),
+            fontWeight = FontWeight.Bold,
             modifier = Modifier.clickable {
                 navController.navigate(Screen.Login.route)
             }
         )
     }
+
 }

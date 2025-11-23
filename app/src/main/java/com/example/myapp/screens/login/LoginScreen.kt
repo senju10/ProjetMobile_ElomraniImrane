@@ -1,9 +1,12 @@
 package com.example.myapp.screens.login
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.myapp.R
@@ -56,5 +59,24 @@ fun LoginScreen(navController: NavController) {
         ) {
             navController.navigate(Screen.Shop.route)
         }
+
+        Spacer(modifier = Modifier.height(16.dp))
+        Row(
+            horizontalArrangement = Arrangement.Center,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+
+            Text(text = stringResource(R.string.no_account))
+            Spacer(modifier = Modifier.width(6.dp))
+
+            Text(
+                text = stringResource(R.string.signup_title),
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.clickable {
+                    navController.navigate(Screen.SignUp.route)
+                }
+            )
+        }
+
     }
 }

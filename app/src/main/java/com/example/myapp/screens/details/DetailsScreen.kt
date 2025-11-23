@@ -5,9 +5,14 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.myapp.navigation.Screen
+import com.example.myapp.R
+import com.example.myapp.components.SectionTitle
+import com.example.myapp.components.AppButton
+
 
 @Composable
 fun DetailScreen(
@@ -20,19 +25,25 @@ fun DetailScreen(
             .padding(20.dp)
     ) {
 
-        Text(text = "Product Details", modifier = Modifier.padding(bottom = 20.dp))
+        SectionTitle(
+            text = stringResource(R.string.details_title),
+            modifier = Modifier.padding(bottom = 20.dp)
+        )
 
-        Text(text = "Product ID: $productId")
+        Text(
+            text = "ID: $productId",
+            modifier = Modifier.padding(bottom = 16.dp)
+        )
 
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
-        Button(
-            onClick = { navController.navigate(Screen.Cart.route) },
+        AppButton(
+            text = stringResource(R.string.add_to_cart),
             modifier = Modifier
                 .fillMaxWidth()
                 .height(55.dp)
         ) {
-            Text(text = "Add to Cart")
+            navController.navigate(Screen.Cart.route)
         }
     }
 }

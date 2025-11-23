@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.myapp.navigation.AppNavGraph
-import com.example.myapp.ui.theme.MyAppTheme
+import com.example.myapp.ui.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
 
@@ -17,7 +17,7 @@ class MainActivity : ComponentActivity() {
 
         setContent {
 
-            MyAppTheme {   // Le thème global Material3
+            AppTheme {   // Le thème global Material3
                 Surface {  // Surface = fond de l'app
                     AppEntryPoint()
                 }

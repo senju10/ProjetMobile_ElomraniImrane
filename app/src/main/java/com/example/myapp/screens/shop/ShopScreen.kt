@@ -1,17 +1,21 @@
 package com.example.myapp.screens.shop
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Text
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.myapp.components.ProductCard
 import com.example.myapp.navigation.Screen
+import com.example.myapp.components.Product
+import com.example.myapp.components.SectionTitle
+import com.example.myapp.R
+
+
 
 // Fake data temporaire
 data class Product(
@@ -20,42 +24,38 @@ data class Product(
     val price: String
 )
 
-val sampleProducts = listOf(
-    Product("1", "Snowboard Jacket", "$99"),
-    Product("2", "Ski Gloves", "$25"),
-    Product("3", "Winter Boots", "$79")
+val fakeProducts = listOf(
+    Product("1", "Snowboard Jacket", 99.0),
+    Product("2", "Ski Pants", 79.0),
+    Product("3", "Winter Gloves", 25.0)
 )
 
 @Composable
 fun ShopScreen(navController: NavController) {
 
-    Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(20.dp)
+    ) {
 
-        Text(text = "Shop", modifier = Modifier.padding(bottom = 20.dp))
+        SectionTitle(
+            text = stringResource(R.string.shop_title),
+            modifier = Modifier.padding(bottom = 20.dp)
+        )
 
-        // Liste de produits
-        LazyColumn(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-            items(sampleProducts) { product ->
-
-                Card(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clickable {
-                            navController.navigate(
-                                Screen.Detail.createRoute(product.id)
-                            )
-                        },
-                    elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
-                ) {
-                    Column(modifier = Modifier.padding(16.dp)) {
-                        Text(text = product.name)
-                        Spacer(Modifier.height(6.dp))
-                        Text(text = product.price)
+        LazyColumn(
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+            modifier = Modifier.fillMaxSize()
+        ) {
+            items(fakeProducts) { product ->
+                ProductCard(
+                    product = product,
+                    onClick = {
+                        navController.navigate(Screen.Detail.createRoute(product.id))
                     }
-                }
-
+                )
             }
         }
-
     }
 }
