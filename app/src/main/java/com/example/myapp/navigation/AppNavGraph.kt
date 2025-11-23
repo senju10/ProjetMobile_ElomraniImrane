@@ -40,13 +40,12 @@ fun AppNavGraph(navController: NavHostController) {
         composable(Screen.Cart.route) {
             com.example.myapp.screens.cart.CartScreen(navController)
         }
-
         composable(Screen.Confirmation.route) {
-            // ConfirmationScreen()
+            com.example.myapp.screens.confirmation.ConfirmationScreen(navController)
         }
 
         composable(Screen.Error.route) {
-            // ErrorScreen()
+            com.example.myapp.screens.error.ErrorScreen(navController)
         }
     }
 }

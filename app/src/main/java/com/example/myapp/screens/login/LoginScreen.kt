@@ -1,71 +1,60 @@
 package com.example.myapp.screens.login
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Button
-import androidx.compose.material3.Text
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.myapp.R
+import com.example.myapp.components.AppButton
 import com.example.myapp.navigation.Screen
+import com.example.myapp.components.InputField
+import com.example.myapp.components.SectionTitle
+
 
 @Composable
 fun LoginScreen(navController: NavController) {
 
-    // Champs temporaires (UI seulement pour l'instant)
-    var email by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
+    val email = remember { mutableStateOf("") }
+    val password = remember { mutableStateOf("") }
 
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(20.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+        verticalArrangement = Arrangement.Center
     ) {
 
-        Text(text = "Login", modifier = Modifier.padding(bottom = 20.dp))
+        SectionTitle(
+            text = stringResource(R.string.login_title),
+            modifier = Modifier.padding(bottom = 24.dp)
+        )
 
-        // Champ Email
-        OutlinedTextField(
+        InputField(
             value = email,
-            onValueChange = { email = it },
-            label = { Text("Email") },
-            modifier = Modifier.fillMaxWidth()
+            label = stringResource(R.string.email),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 16.dp)
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
-
-        // Champ Password
-        OutlinedTextField(
+        InputField(
             value = password,
-            onValueChange = { password = it },
-            label = { Text("Password") },
-            modifier = Modifier.fillMaxWidth()
+            label = stringResource(R.string.password),
+            isPassword = true,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 24.dp)
         )
 
-        Spacer(modifier = Modifier.height(25.dp))
-
-        // Bouton Login
-        Button(
-            onClick = { navController.navigate(Screen.Shop.route) },
+        AppButton(
+            text = stringResource(R.string.login_button),
             modifier = Modifier
                 .fillMaxWidth()
                 .height(55.dp)
         ) {
-            Text(text = "Login")
+            navController.navigate(Screen.Shop.route)
         }
-
-        Spacer(modifier = Modifier.height(12.dp))
-
-        // Aller vers SignUp
-        Text(
-            text = "Don't have an account? Sign Up",
-            modifier = Modifier.clickable {
-                navController.navigate(Screen.SignUp.route)
-            }
-        )
     }
 }

@@ -8,8 +8,10 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.myapp.R
 import com.example.myapp.navigation.Screen
 
 @Composable
@@ -26,13 +28,13 @@ fun SignUpScreen(navController: NavController) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        Text(text = "Sign Up", modifier = Modifier.padding(bottom = 20.dp))
+        Text(stringResource(id = R.string.signup_title), modifier = Modifier.padding(bottom = 20.dp))
 
         // Name
         OutlinedTextField(
             value = name,
             onValueChange = { name = it },
-            label = { Text("Name") },
+            label = { stringResource(id = R.string.name) },
             modifier = Modifier.fillMaxWidth()
         )
 
@@ -65,14 +67,14 @@ fun SignUpScreen(navController: NavController) {
                 .fillMaxWidth()
                 .height(55.dp)
         ) {
-            Text(text = "Sign Up")
+            Text(stringResource(id = R.string.signup_button))
         }
 
         Spacer(modifier = Modifier.height(12.dp))
 
         // Retour vers Login
         Text(
-            text = "Already have an account? Login",
+            stringResource(id = R.string.already_account),
             modifier = Modifier.clickable {
                 navController.navigate(Screen.Login.route)
             }

@@ -8,10 +8,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.myapp.navigation.Screen
 import com.example.myapp.R
+import com.example.myapp.components.AppButton
 
 @Composable
 fun WelcomeScreen(navController: NavController) {
@@ -34,19 +36,19 @@ fun WelcomeScreen(navController: NavController) {
 
         // TEXTS (temporaires)
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
-            Text(text = "Welcome to Winter Sports")
+            Text(stringResource(id = R.string.welcome_title))
             Spacer(modifier = Modifier.height(10.dp))
-            Text(text = "Discover the best winter gear and clothing")
+            Text(stringResource(id = R.string.welcome_desc))
         }
 
         // BUTTON
-        Button(
-            onClick = { navController.navigate(Screen.Login.route) },
+        AppButton(
+            text = stringResource(R.string.get_started),
             modifier = Modifier
                 .fillMaxWidth()
                 .height(55.dp)
         ) {
-            Text(text = "Get Started")
+            navController.navigate(Screen.Login.route)
         }
     }
 }
