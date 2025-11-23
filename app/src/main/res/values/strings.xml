@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name" translatable="false">MyApp</string>
+    <!-- Welcome Screen -->
+    <string name="welcome_title">Welcome to Winter Sports</string>
+    <string name="welcome_subtitle">Discover the latest in winter sports apparel and gear. Get ready for your next adventure with our curated collection.</string>
+    <string name="get_started">Get Started</string>
+
+    <!-- Login Screen -->
+    <string name="login_title">Login</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button">Login</string>
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="sign_up_link">Sign Up</string>
+
+    <!-- SignUp Screen -->
+    <string name="signup_title">Sign Up</string>
+    <string name="name_hint">Full Name</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="signup_button">Sign Up</string>
+    <string name="have_account">Already have an account?</string>
+    <string name="login_link">Login</string>
+
+    <!-- Shop Screen -->
+    <string name="shop_title">Winter Sports</string>
+    <string name="filter_all">All</string>
+    <string name="filter_men">Men</string>
+    <string name="filter_women">Women</string>
+    <string name="filter_kids">Kids</string>
+
+    <!-- Detail Screen -->
+    <string name="detail_title">Product Details</string>
+    <string name="size_label">Size</string>
+    <string name="color_label">Color</string>
+    <string name="add_to_cart">Add to Cart</string>
+
+    <!-- Cart Screen -->
+    <string name="cart_title">Cart</string>
+    <string name="empty_cart">Your cart is empty</string>
+    <string name="checkout_button">Checkout</string>
+
+    <!-- Confirmation Screen -->
+    <string name="confirmation_title">Your order has been confirmed!</string>
+    <string name="back_to_home">Back to Home</string>
+
+    <!-- Error Screen -->
+    <string name="error_title">Something went wrong</string>
+    <string name="error_message">Please try again</string>
+    <string name="try_again">Try Again</string>
+
+    <!-- Navigation -->
+    <string name="home">Home</string>
+    <string name="cart">Cart</string>
+    <string name="profile">Profile</string>
+    <string name="back">Back</string>
+</resources>
