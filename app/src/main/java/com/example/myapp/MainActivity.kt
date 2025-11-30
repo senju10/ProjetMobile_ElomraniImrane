@@ -16,13 +16,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-
-            AppTheme {   // Le thème global Material3
-                Surface {  // Surface = fond de l'app
+            AppTheme {
+                Surface {
                     AppEntryPoint()
                 }
             }
-
         }
     }
 }

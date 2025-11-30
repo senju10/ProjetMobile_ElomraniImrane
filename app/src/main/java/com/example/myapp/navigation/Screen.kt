@@ -1,7 +1,8 @@
 package com.example.myapp.navigation
 
-sealed class Screen(val route: String) {
+import androidx.compose.ui.graphics.vector.ImageVector
 
+sealed class Screen(val route: String) {
     object Welcome : Screen("welcome")
 
     object Login : Screen("login")
@@ -20,3 +21,4 @@ sealed class Screen(val route: String) {
 
     object Error : Screen("error")
 }
+

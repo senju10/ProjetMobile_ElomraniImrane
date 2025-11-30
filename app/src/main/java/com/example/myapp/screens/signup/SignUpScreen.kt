@@ -70,16 +70,22 @@ fun SignUpScreen(navController: NavController) {
         ) {
             navController.navigate(Screen.Login.route)
         }
-        Text(text = stringResource(R.string.already_account))
-        Spacer(modifier = Modifier.width(6.dp))
 
-        Text(
-            text = stringResource(R.string.login_button),
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier.clickable {
-                navController.navigate(Screen.Login.route)
-            }
-        )
+        Spacer(modifier = Modifier.height(12.dp))
+
+        Row {
+            Text(text = stringResource(R.string.already_account))
+            Spacer(modifier = Modifier.width(6.dp))
+
+            Text(
+                text = stringResource(R.string.login_button),
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.clickable {
+                    navController.navigate(Screen.Login.route)
+                }
+            )
+        }
+
     }
 
 }

@@ -6,7 +6,7 @@
     <string name="get_started">Get Started</string>
 
     <!-- Login -->
-    <string name="login_title">Login</string>
+    <string name="login_title"> Login</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="login_button">Login</string>
@@ -16,13 +16,14 @@
     <string name="signup_title">Sign Up</string>
     <string name="name">Name</string>
     <string name="signup_button">Sign Up</string>
-    <string name="already_account">Already have an account? </string>
+    <string name="already_account">Already have an account?</string>
 
     <!-- SHOP -->
     <string name="shop_title">Shop</string>
 
     <!-- DETAILS -->
-    <string name="details_title">Product Details</string>
+    <string name="title_product">Puma Insulated Jacket</string>
+    <string name="details_title">Ultra-light warmth with breathable performance for high-output mountain missions.</string>
     <string name="price">Price</string>
     <string name="add_to_cart">Add to Cart</string>
 
@@ -30,6 +31,7 @@
     <string name="cart_title">Your Cart</string>
     <string name="cart_total">Total</string>
     <string name="checkout">Checkout</string>
+    <string name="false_checkout">FalseCheckout</string>
 
     <!-- CONFIRMATION -->
     <string name="order_confirmed">✔ Order Confirmed!</string>
